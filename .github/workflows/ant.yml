@@ -13,7 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -24,7 +23,10 @@ jobs:
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
     
-  
+    - uses: actions/download-artifact@v3
+      with:
+        name: AntTestProj.war
+        path: /home/runner/work/MyAntProject/MyAntProject/
         
     - name: Display structure of downloaded files
       run: ls -R  

@@ -23,3 +23,10 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
+    
+    - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+        
+    - name: Display structure of downloaded files
+      run: ls -R  

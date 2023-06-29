@@ -27,6 +27,7 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: AntTestProj.war
+        path: /home/runner/work/MyAntProject/MyAntProject/
         
     - name: Display structure of downloaded files
       run: ls -R  
